@@ -11,6 +11,16 @@ import UIKit
 class PhotosViewController: UIViewController {
     
     // MARK: properties
+    
     @IBOutlet var imageView: UIImageView!
+    var store: PhotoStore!
+    
+    // MARK: UIViewController methods
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        store.fetchRecentPhotos()
+    }
     
 }

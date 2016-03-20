@@ -14,8 +14,8 @@ enum Method: String {
 
 struct FlickerAPI {
     
-    private static let baseURLString = "​h​t​t​p​s​:​/​/​a​p​i​.​f​l​i​c​k​r​.​c​o​m​/​s​e​r​v​i​c​e​s​/​r​e​s​t"
-    private static let APIKey = "a​6​d​8​1​9​4​9​9​1​3​1​0​7​1​f​1​5​8​f​d​7​4​0​8​6​0​a​5​a​8​8"
+    private static let baseURLString = "https://api.flickr.com/services/rest"
+    private static let APIKey = "a6d819499131071f158fd740860a5a88"
     
     static func recentPhotosURL() -> NSURL {
         return flickrURL(method: .RecentPhotos, parameters: ["extras": "url_h, date_taken"])
