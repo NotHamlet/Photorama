@@ -6,7 +6,7 @@
 //  Copyright © 2016 Big Nerd Ranch. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class Photo {
     
@@ -14,6 +14,7 @@ class Photo {
     let remoteURL: NSURL
     let photoID: String
     let dateTaken: NSDate
+    var image: UIImage?
     
     init(title: String, remoteURL: NSURL, photoID: String, dateTaken: NSDate) {
         self.title = title;
