@@ -20,22 +20,42 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="OwW-CB-06E">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="2" id="Rg8-Rc-BjH">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="Rg8-Rc-BjH">
                                     <size key="itemSize" width="90" height="90"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="0.0"/>
+                                    <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionViewCell" id="Yzr-7K-iZG">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UICollectionViewCell" id="Yzr-7K-iZG" customClass="PhotoCollectionViewCell" customModule="Photorama" customModuleProvider="target">
                                         <rect key="frame" x="2" y="66" width="90" height="90"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SM1-yW-qJT">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                </imageView>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="white" translatesAutoresizingMaskIntoConstraints="NO" id="geo-Xk-09c">
+                                                    <rect key="frame" x="35" y="35" width="20" height="20"/>
+                                                </activityIndicatorView>
+                                            </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="SM1-yW-qJT" secondAttribute="bottom" id="67o-8M-1R0"/>
+                                            <constraint firstItem="SM1-yW-qJT" firstAttribute="leading" secondItem="Yzr-7K-iZG" secondAttribute="leading" id="Glt-vo-eji"/>
+                                            <constraint firstItem="geo-Xk-09c" firstAttribute="centerX" secondItem="Yzr-7K-iZG" secondAttribute="centerX" id="Ty8-hT-mPx"/>
+                                            <constraint firstItem="geo-Xk-09c" firstAttribute="centerY" secondItem="Yzr-7K-iZG" secondAttribute="centerY" id="p9T-gw-acZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="SM1-yW-qJT" secondAttribute="trailing" id="vTV-PN-CgU"/>
+                                            <constraint firstItem="SM1-yW-qJT" firstAttribute="top" secondItem="Yzr-7K-iZG" secondAttribute="top" id="vcq-ZW-8WB"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="SM1-yW-qJT" id="Ig9-WS-euV"/>
+                                            <outlet property="spinner" destination="geo-Xk-09c" id="bPC-oa-aco"/>
+                                        </connections>
                                     </collectionViewCell>
                                 </cells>
                             </collectionView>
