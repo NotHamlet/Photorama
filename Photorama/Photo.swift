@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Photo: Equatable {
+class Photo {
     
     // MARK: Properties
     
@@ -29,7 +29,10 @@ class Photo: Equatable {
     }
 }
 
-// MARK: Photo Equality Operator
+
+// MARK: Extension: Photo: Equatable
+
+extension Photo: Equatable {}
 
 func == (lhs: Photo, rhs: Photo) -> Bool {
     // Two photos are the same if they have the same photoID
