@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Photorama-->
@@ -55,6 +56,7 @@
                                         <connections>
                                             <outlet property="imageView" destination="SM1-yW-qJT" id="Ig9-WS-euV"/>
                                             <outlet property="spinner" destination="geo-Xk-09c" id="bPC-oa-aco"/>
+                                            <segue destination="Wpc-O5-gJZ" kind="show" identifier="ShowPhoto" id="Yyx-mh-2Eo"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -76,6 +78,38 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1057" y="337"/>
+        </scene>
+        <!--Photo Info View Controller-->
+        <scene sceneID="e3Y-F8-pV5">
+            <objects>
+                <viewController id="Wpc-O5-gJZ" customClass="PhotoInfoViewController" customModule="Photorama" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PEf-L4-WNj"/>
+                        <viewControllerLayoutGuide type="bottom" id="XJl-sU-3ge"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="dLO-ee-Cug">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ID-Tj-Jic">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="3ID-Tj-Jic" firstAttribute="leading" secondItem="dLO-ee-Cug" secondAttribute="leading" id="KFZ-R8-My2"/>
+                            <constraint firstAttribute="trailing" secondItem="3ID-Tj-Jic" secondAttribute="trailing" id="SJK-pp-ZTC"/>
+                            <constraint firstItem="XJl-sU-3ge" firstAttribute="top" secondItem="3ID-Tj-Jic" secondAttribute="bottom" id="pu8-Pv-tQe"/>
+                            <constraint firstItem="3ID-Tj-Jic" firstAttribute="top" secondItem="dLO-ee-Cug" secondAttribute="topMargin" id="wR0-kd-TDI"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="imageView" destination="3ID-Tj-Jic" id="3ul-OL-H4S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ibN-hI-26J" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1057" y="1116"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mz5-SK-r1U">
